@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GunAI - Asisten AI Personal Canggih</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="gunai.png">
+</head>
+<body>
+  <!-- Background Elements -->
+  <div class="particles"></div>
+  <div class="floating-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+  
+  <!-- Main Content -->
+  <main class="animate__animated animate__fadeIn">
+    <header>
+      <div class="logo-title">
+        <img src="gunai.png" alt="GunAI Logo" class="logo animate__animated animate__pulse animate__infinite animate__slower">
+        <div class="title-group">
+          <h1 class="animate__animated animate__fadeInDown">GunAI</h1>
+          <p class="tagline animate__animated animate__fadeInDown animate__delay-1s">Asisten AI Generasi Baru oleh Guntur Tri Atmaja</p>
+        </div>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle theme" class="animate__animated animate__fadeIn animate__delay-1s">
+        <span class="theme-icon sun">☀️</span>
+        <span class="theme-icon moon">🌙</span>
+      </button>
+    </header>
+
+    <section class="hero animate__animated animate__fadeIn animate__delay-1s">
+      <div class="hero-text">
+        <h2>Jelajahi Kekuatan <span class="highlight">Kecerdasan Buatan</span></h2>
+        <p>GunAI memberikan jawaban instan untuk semua pertanyaan Anda dengan teknologi Gemini AI terbaru dari Google.</p>
+      </div>
+    </section>
+
+    <form class="animate__animated animate__fadeIn animate__delay-1s">
+      <div class="prompt-box">
+        <input name="prompt" placeholder="Tanyakan apapun kepada GunAI..." type="text" autocomplete="off">
+        <button type="submit" class="submit-button">
+          <span class="button-text">Kirim Pertanyaan</span>
+          <span class="button-icon">➔</span>
+        </button>
+      </div>
+    </form>
+    
+    <div class="features animate__animated animate__fadeIn animate__delay-2s">
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Cepat & Akurat</h3>
+        <p>Respons instan dengan akurasi tinggi menggunakan model AI terbaru</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Privasi Terjaga</h3>
+        <p>Percakapan Anda aman dan tidak disimpan secara permanen</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌐</div>
+        <h3>Multifungsi</h3>
+        <p>Dapat membantu dalam berbagai topik dan kebutuhan</p>
+      </div>
+    </div>
+    
+    <div class="output-container animate__animated animate__fadeIn animate__delay-2s">
+      <div class="output">
+        <div class="typing-indicator">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <div class="ai-response">(Hasil percakapan akan muncul di sini...)</div>
+      </div>
+      <div class="circuit-overlay"></div>
+      <div class="gradient-border"></div>
+    </div>
+    
+    <footer class="animate__animated animate__fadeIn animate__delay-3s">
+      <div class="tech-stack">
+        <span>Dibangun dengan Gemini API</span>
+        <span class="divider">•</span>
+        <span>© 2025 Guntur Tri Atmaja</span>
+      </div>
+    </footer>
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
