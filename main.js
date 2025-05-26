@@ -58,6 +58,19 @@ function isIdentityQuestion(prompt) {
   return identityKeywords.some(keyword => lowerPrompt.includes(keyword))
 }
 
+// Fungsi untuk mendeteksi pertanyaan tentang pacar Guntur
+function isGirlfriendQuestion(prompt) {
+  const girlfriendKeywords = [
+    'siapa pacar guntur', 'pacar guntur tri atmaja', 
+    'siti sundari', 'siapa kekasih guntur',
+    'who is guntur\'s girlfriend', 'guntur\'s girlfriend',
+    'pasangan guntur', 'kekasih guntur'
+  ]
+  
+  const lowerPrompt = prompt.toLowerCase()
+  return girlfriendKeywords.some(keyword => lowerPrompt.includes(keyword))
+}
+
 form.onsubmit = async (ev) => {
   ev.preventDefault()
   const prompt = promptInput.value.trim()
@@ -70,7 +83,7 @@ form.onsubmit = async (ev) => {
   ev.submitter.disabled = true
   
   try {
-    // Jika pertanyaan tentang identitas, berikan respon khusus
+    // Jika pertanyaan tentang identitas
     if (isIdentityQuestion(prompt)) {
       typingIndicator.style.display = 'none'
       output.innerHTML = `
@@ -80,7 +93,20 @@ form.onsubmit = async (ev) => {
       `
       return
     }
+    
+    // Jika pertanyaan tentang pacar Guntur
+    if (isGirlfriendQuestion(prompt)) {
+      typingIndicator.style.display = 'none'
+      output.innerHTML = `
+        <div class="girlfriend-response">
+          <p>Pacar Guntur Tri Atmaja adalah <strong style="color: var(--primary)">Siti Sundari</strong> ❤️</p>
+          <p>Mereka adalah pasangan yang sangat harmonis dan saling mendukung.</p>
+        </div>
+      `
+      return
+    }
 
+    // Pertanyaan lainnya
     const result = await chat.sendMessageStream(prompt)
     
     let buffer = []
