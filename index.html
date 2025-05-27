@@ -20,30 +20,55 @@
     <div class="shape shape-3"></div>
   </div>
   
+  <!-- Sidebar -->
+  <aside class="sidebar animate__animated animate__fadeInLeft">
+    <div class="sidebar-header">
+      <div class="logo-title">
+        <img src="gunai.png" alt="GunAI Logo" class="logo">
+        <h2>GunAI</h2>
+      </div>
+      <button id="new-chat" class="new-chat-btn">
+        <span>+</span> Chat Baru
+      </button>
+    </div>
+    
+    <div class="chat-history">
+      <h3>Riwayat Percakapan</h3>
+      <div class="history-items" id="history-items">
+        <!-- History items will be added here dynamically -->
+      </div>
+    </div>
+    
+    <div class="developer-info">
+      <p>Dikembangkan oleh:</p>
+      <h4>Guntur Tri Atmaja</h4>
+    </div>
+  </aside>
+
   <!-- Main Content -->
   <main class="animate__animated animate__fadeIn">
     <header>
-      <div class="logo-title">
-        <img src="gunai.png" alt="GunAI Logo" class="logo animate__animated animate__pulse animate__infinite animate__slower">
-        <div class="title-group">
-          <h1 class="animate__animated animate__fadeInDown">GunAI</h1>
-          <p class="tagline animate__animated animate__fadeInDown animate__delay-1s">Asisten AI Generasi Baru oleh Guntur Tri Atmaja</p>
+      <div class="mobile-header">
+        <button id="sidebar-toggle" class="sidebar-toggle">☰</button>
+        <div class="logo-title">
+          <img src="gunai.png" alt="GunAI Logo" class="logo">
+          <h1>GunAI</h1>
         </div>
       </div>
-      <button id="theme-toggle" aria-label="Toggle theme" class="animate__animated animate__fadeIn animate__delay-1s">
+      <button id="theme-toggle" aria-label="Toggle theme">
         <span class="theme-icon sun">☀️</span>
         <span class="theme-icon moon">🌙</span>
       </button>
     </header>
 
-    <section class="hero animate__animated animate__fadeIn animate__delay-1s">
+    <section class="hero">
       <div class="hero-text">
         <h2>Jelajahi Kekuatan <span class="highlight">Kecerdasan Buatan</span></h2>
         <p>GunAI memberikan jawaban instan untuk semua pertanyaan Anda dengan teknologi Gemini AI terbaru dari Google.</p>
       </div>
     </section>
 
-    <form class="animate__animated animate__fadeIn animate__delay-1s">
+    <form>
       <div class="prompt-box">
         <input name="prompt" placeholder="Tanyakan apapun kepada GunAI..." type="text" autocomplete="off">
         <button type="submit" class="submit-button">
@@ -53,7 +78,7 @@
       </div>
     </form>
     
-    <div class="output-container animate__animated animate__fadeIn animate__delay-2s">
+    <div class="output-container">
       <div class="output">
         <div class="typing-indicator">
           <div class="dot"></div>
@@ -65,51 +90,6 @@
       <div class="circuit-overlay"></div>
       <div class="gradient-border"></div>
     </div>
-    
-    <!-- Updated Features Section -->
-    <div class="features-container animate__animated animate__fadeIn animate__delay-3s">
-      <h3 class="features-title">Keunggulan GunAI</h3>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h4>Respons Cepat</h4>
-          <p>Dapatkan jawaban instan dalam hitungan detik</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🧠</div>
-          <h4>Pengetahuan Luas</h4>
-          <p>Menguasai berbagai topik dan disiplin ilmu</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔒</div>
-          <h4>Privasi Terjamin</h4>
-          <p>Percakapan Anda tetap aman dan pribadi</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">💬</div>
-          <h4>Bahasa Alami</h4>
-          <p>Berinteraksi layaknya berbicara dengan manusia</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🌐</div>
-          <h4>Multi Bahasa</h4>
-          <p>Mendukung berbagai bahasa di dunia</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔄</div>
-          <h4>Pembelajaran Terus</h4>
-          <p>Selalu diperbarui dengan pengetahuan terbaru</p>
-        </div>
-      </div>
-    </div>
-    
-    <footer class="animate__animated animate__fadeIn animate__delay-4s">
-      <div class="tech-stack">
-        <span>Dibangun dengan Gemini API</span>
-        <span class="divider">•</span>
-        <span>© 2025 Guntur Tri Atmaja</span>
-      </div>
-    </footer>
   </main>
 
   <script type="module" src="main.js"></script>
