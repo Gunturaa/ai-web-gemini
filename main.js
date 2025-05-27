@@ -180,6 +180,8 @@ form.onsubmit = async (ev) => {
   ev.preventDefault()
   const prompt = promptInput.value.trim()
   if (!prompt) return
+  promptInput.value = ''
+
 
   const userMessage = { role: 'user', parts: [{ text: prompt }] }
   chatHistory.push(userMessage)
@@ -217,11 +219,22 @@ form.onsubmit = async (ev) => {
     const result = await chat.sendMessageStream(prompt)
     let responseText = ''
 
-    for await (const chunk of result.stream) {
-      const chunkText = chunk.text()
-      responseText += chunkText
-      output.innerHTML += `<div class="chat-message ai-message"><div class="message-content">${md.render(chunkText)}</div></div>`
-    }
+    // Buat satu elemen kontainer dulu untuk seluruh respon
+const aiMessageEl = document.createElement('div')
+aiMessageEl.className = 'chat-message ai-message'
+
+const messageContent = document.createElement('div')
+messageContent.className = 'message-content'
+
+aiMessageEl.appendChild(messageContent)
+output.appendChild(aiMessageEl)
+
+for await (const chunk of result.stream) {
+  const chunkText = chunk.text()
+  responseText += chunkText
+  messageContent.innerHTML = md.render(responseText)
+}
+
 
     const aiMessage = { role: 'model', parts: [{ text: responseText }] }
     chatHistory.push(aiMessage)
